@@ -1,0 +1,1 @@
+C:\Users\lfrit\source\repos\PDFExample\PDFExample\PDFExample.csproj;x86
