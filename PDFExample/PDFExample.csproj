@@ -107,6 +107,8 @@
     <None Include="PDFExample_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\create.js" />
+    <Content Include="Assets\jspdf.debug.js" />
     <Content Include="Assets\makepdf.html" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

@@ -54,17 +54,15 @@ namespace PDFExample
             var savePicker = new FileSavePicker();
             savePicker.FileTypeChoices.Add("PDF", new List<string> { ".pdf" });
             savePicker.SuggestedFileName = "New Document";
-            StorageFile file = await savePicker.PickSaveFileAsync();          
+            StorageFile file = await savePicker.PickSaveFileAsync();
 
-            await FileIO.WriteTextAsync(file, pdfresult);
-        }
-
-        private async void writeFile(string testPath, string pdfResult)
-        {
-            using (FileStream fs = new FileStream(testPath, FileMode.Create, FileAccess.ReadWrite))
+            try
             {
-                Byte[] bytes = new UTF8Encoding(true).GetBytes(pdfResult);
-                await fs.WriteAsync(bytes, 0, bytes.Length);
+                await FileIO.WriteTextAsync(file, pdfresult);
+            }
+            catch(Exception e)
+            {
+                //If they cancel the file operation... we don't care!
             }
         }
     }
