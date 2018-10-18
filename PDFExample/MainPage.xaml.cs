@@ -60,7 +60,7 @@ namespace PDFExample
             {
                 await FileIO.WriteTextAsync(file, pdfresult);
             }
-            catch(Exception e)
+            catch(NullReferenceException e)
             {
                 //If they cancel the file operation... we don't care!
             }
